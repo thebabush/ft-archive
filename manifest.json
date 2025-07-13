@@ -1,0 +1,17 @@
+{
+	"name": "Archive.is",
+	"description": "An (unofficial) Archive.is Firefox extension",
+	"version": "0.2",
+	"host_permissions": ["<all_urls>"],
+	"icons": { "128": "icon.png" },
+	"content_scripts": [{
+		"matches": ["*://*.ft.com/*"],
+		"js": ["content.js"]
+	}],
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "archive-is@archive.today"
+		}
+	},
+	"manifest_version": 3
+}
