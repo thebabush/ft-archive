@@ -1,17 +1,34 @@
 {
-	"name": "Archive.is",
-	"description": "An (unofficial) Archive.is Firefox extension",
-	"version": "0.2",
-	"host_permissions": ["<all_urls>"],
-	"icons": { "128": "icon.png" },
-	"content_scripts": [{
-		"matches": ["*://*.ft.com/*"],
-		"js": ["content.js"]
-	}],
-	"browser_specific_settings": {
-		"gecko": {
-			"id": "archive-is@archive.today"
-		}
-	},
-	"manifest_version": 3
+    "name": "Archive.is",
+    "description": "An (unofficial) Archive.is Firefox extension",
+    "version": "0.4",
+    "manifest_version": 3,
+    "icons": { "128": "icon.png" },
+
+    "host_permissions": [
+        "*://*.ft.com/*"
+    ],
+    "permissions": [
+        "declarativeNetRequest"
+    ],
+    "declarative_net_request": {
+        "rule_resources": [
+            {
+                "id": "ft-referer-rules",
+                "enabled": true,
+                "path": "rules.json"
+            }
+        ]
+    },
+
+    "content_scripts": [{
+        "matches": ["*://*.ft.com/*"],
+        "js": ["content.js"]
+    }],
+
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "archive-is@archive.today"
+        }
+    }
 }

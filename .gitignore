@@ -8,6 +8,10 @@ web-ext-artifacts/
 *.crx
 *.pem
 
+# Browser-generated extension metadata
+_metadata/
+_generated_resources/
+
 # Node modules (if using npm/yarn)
 node_modules/
 
